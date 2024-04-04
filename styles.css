@@ -1,0 +1,361 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E9E6D3;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 800px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('assets/header.gif');
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+  z-index: -1;
+}
+
+/* Hero container */
+
+.hero__container {
+  max-width: 800px;
+  --padding-container: 0;
+  display: grid;
+  grid-auto-rows: max-content;
+  align-content: center;
+  gap: 1em;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 3rem;
+}
+
+.hero__paragraph {
+  margin-bottom: 20px;
+}
+
+/* esto es el boton  */
+.cta {
+  display: inline-block;
+  background-color: #2091F9;
+  justify-self: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 30px;
+  border-radius: 32px;
+}
+
+/* TODO ESTO ES DE LA CARDS */
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333333;
+  ;
+  text-align: center;
+}
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popular__card:hover {
+  transform: scale(1.05);
+  transition: all .5s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 5, 5, 0.3); /* Agrega una sombra con desplazamiento X=0, Y=0, desenfoque 10px y color rgba(0, 0, 0, 0.3) */
+}
+
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+}
+
+ /* Estilos CSS para el modal y la imagen responsiva */
+ .hotel-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------------------- */
+
+/* Estilos para el modal */
+.modal-content {
+  display: flex;
+}
+
+.hotel-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hotel-images {
+  display: flex;
+}
+
+.hotel-image-left {
+  width: 50%; /* Tamaño medio para la imagen de la izquierda */
+  margin-right: 10px; /* Agregar separación entre la imagen izquierda y las de la derecha */
+}
+
+.hotel-image-right {
+  width: 50%; /* Tamaño medio para la sección de imágenes a la derecha */
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-image-top,
+.hotel-image-bottom {
+  width: 100%; /* Tamaño completo para las imágenes de la derecha */
+  margin-bottom: 10px; /* Agregar separación vertical entre las imágenes */
+}
+
+.hotel-details {
+  padding: 10px;
+}
+
+.hotel-title {
+  font-size: 1.5em; /* Tamaño medio para el título del hotel */
+}
+
+.hotel-guests,
+.hotel-price {
+  font-size: 1em; /* Tamaño normal para los detalles del hotel */
+}
+
+.hotel-description {
+  font-size: 0.9em; /* Tamaño más pequeño para la descripción del hotel */
+}
+
+.hotel-map {
+  width: 100%; /* Ocupar todo el ancho del modal */
+  height: 60%; /* Altura del 60% del modal */
+  box-shadow: 0 0 10px #80b6ec; /* Agregando sombra */
+
+}
+
+
+
+
+
+/* ----------------------------------DOBLE COLUMNA DENTRO ODAL------------------------------------------------------------------------------ */
+.main-wrapper {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+}
+.hotel-details, .price-calculator {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #80b6ec; /* Agregando sombra */
+
+}
+.price-calculator {
+  display: flex;
+  flex-direction: column;
+}
+.input-group {
+  margin-bottom: 10px;
+}
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.calculate-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.reserve-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/* Estilos para el mapa */
+.map-container {
+  margin-top: 20px; /* Espacio entre la descripción y el mapa */
+}
+
+footer {
+  background-color: #1f1e1e;
+  color: #d7dcdd;
+  /* Azul claro */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+
+
+/* -----------------------------------------------------------RESPONSIVO------------------------------------------- */
+/* columnas  */
+@media (max-width: 900px) {
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/* columnas  */
+
+/* Estilos responsivos del modal */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
+
+  .hotel-map {
+    height: 50%; /* Altura del 50% del modal en dispositivos pequeños */
+  }
+
+  .hotel-images {
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección a columna para mostrar las imágenes una encima de la otra */
+  }
+
+  .hotel-image-left,
+  .hotel-image-right {
+    width: 100%; /* Ambas imágenes ocupan el 100% del ancho */
+    margin-right: 0; /* Eliminar cualquier margen derecho */
+    margin-bottom: 10px; /* Agregar un espacio entre las imágenes */
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .main-wrapper {
+    flex-direction: column; /* Cambia la dirección del flex container */
+  }
+  .hotel-details, .price-calculator {
+    width: 100%; /* Cambia el ancho para ocupar todo el ancho disponible */
+  }
+  .price-calculator {
+    margin-top: 20px; /* Agrega espacio entre las columnas */
+  }
+  .input-group input {
+    max-width: calc(100% - 16px); /* Resta el padding del ancho máximo */
+  }
+}
